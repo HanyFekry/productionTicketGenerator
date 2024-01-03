@@ -57,6 +57,8 @@ namespace DomainClasses
 
         [Display(Name = "Total length")]
         public double TotalLength { get; set; } // TotalLength
+        [Display(Name = "Non Standard Length")]
+        public double NonStdLength { get; set; }
 
         [Display(Name = "Gross weight")]
         public double? GrossWeight { get; set; } // GrossWeight

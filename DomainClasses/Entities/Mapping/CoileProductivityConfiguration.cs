@@ -38,6 +38,7 @@ namespace DomainClasses.Mapping
             Property(x => x.NoOfCoiles).HasColumnName(@"NoOfCoiles").HasColumnType("int").IsRequired();
             Property(x => x.CoileLength).HasColumnName(@"CoileLength").HasColumnType("float").IsRequired();
             Property(x => x.TotalLength).HasColumnName(@"TotalLength").HasColumnType("float").IsOptional();
+            Property(x => x.NonStdLength).HasColumnName(@"NonStdLength").HasColumnType("float").IsOptional();
             Property(x => x.GrossWeight).HasColumnName(@"GrossWeight").HasColumnType("float").IsOptional();
             Property(x => x.NetWeight).HasColumnName(@"NetWeight").HasColumnType("float").IsOptional();
             Property(x => x.ColorId).HasColumnName(@"ColorId").HasColumnType("nvarchar").IsRequired().HasMaxLength(24);

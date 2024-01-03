@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using Utility;
 
 namespace ProductionTicketGenerator
 {
@@ -36,17 +37,27 @@ namespace ProductionTicketGenerator
                     MessageBox.Show(message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                else if (_Role == SD.AutomotiveUser)
+                else if (_Role.ToLower() == SD.AutomotiveUser.ToLower())
                 {
                     Form form = new frmAutomotivePrint();// (txtUserName.Text);
                     this.Hide();
                     form.Show();
                 }
-                if (_Role == SD.QualityAdmin || _Role == SD.QualityUser)
+                else if (_Role.ToLower().Equals(SD.QualityAdmin.ToLower()) || _Role.ToLower().Equals(SD.QualityUser.ToLower()))
                 {
-                    Form form = new frmAutomotivePrint();
+                    Form form = new frmCoilPrint();
                     this.Hide();
                     form.Show();
+                }
+                else if (_Role.ToLower() == SD.QualityDrumsPrinter.ToLower())
+                {
+                    Form form = new frmDrumPrint();// (txtUserName.Text);
+                    this.Hide();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("يرجى الرجوع لمدير النظام", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

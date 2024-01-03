@@ -16,7 +16,8 @@ namespace ProductionTicketGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAutomotivePrint());
+            //Application.Run(new frmAutomotivePrint());
+            Application.Run(new frmLogin());
         }
     }
 }

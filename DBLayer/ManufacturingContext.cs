@@ -40,6 +40,10 @@ namespace DBLayer
         public DbSet<WoHeadersColor> WoHeadersColors { get; set; } // QC_QualityStatus
         public DbSet<DrumProductivity> DrumProductivities { get; set; }
         public DbSet<PalletType> PalletTypes { get; set; }
+        public DbSet<LeoniPalletDetails> LeoniPalletDetails { get; set; }
+        public DbSet<AutoPalletDetails> AutoPalletDetails { get; set; }
+        public DbSet<LeoniOPF> LeoniOPFs { get; set; }
+        public DbSet<SalesOrderOPF> SalesOrderOPFs { get; set; }
 
 
         static ManufacturingContext()
@@ -126,6 +130,9 @@ namespace DBLayer
             modelBuilder.Configurations.Add(new WoHeadersColorConfiguration());
             modelBuilder.Configurations.Add(new DrumProductivityConfiguration());
             modelBuilder.Configurations.Add(new PalletTypeConfiguration());
+            modelBuilder.Configurations.Add(new LeoniPalletDetailsConfiguration());
+            modelBuilder.Configurations.Add(new LeoniOPFConfiguration());
+            modelBuilder.Configurations.Add(new AutoPalletDetailsConfiguration());
 
 
             modelBuilder.Filter("IsDeleted", (ISoftDelete d) => d.IsDeleted, false);
@@ -148,6 +155,9 @@ namespace DBLayer
             modelBuilder.Configurations.Add(new QualityStatusConfiguration(schema));
             modelBuilder.Configurations.Add(new WoHeadersColorConfiguration(schema));
             modelBuilder.Configurations.Add(new DrumProductivityConfiguration(schema));
+            modelBuilder.Configurations.Add(new LeoniPalletDetailsConfiguration(schema));
+            modelBuilder.Configurations.Add(new LeoniOPFConfiguration(schema));
+            modelBuilder.Configurations.Add(new AutoPalletDetailsConfiguration(schema));
             return modelBuilder;
         }
     }
