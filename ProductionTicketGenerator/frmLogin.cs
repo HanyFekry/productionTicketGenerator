@@ -90,7 +90,7 @@ namespace ProductionTicketGenerator
             }
             else
             {
-                message = "خطأ في إسم المستخدم أو كلمة المرور!";
+                message = "يرجى ادخال إسم المستخدم و كلمة المرور!";
                 return false;
             }
         }
